@@ -5,10 +5,10 @@
              Title="AboutPage">
     <VerticalStackLayout Spacing="10" Margin="10">
         <HorizontalStackLayout Spacing="10">
-            <Image Source="shop_list.jpg" SemanticProperties.Description="My Shopping List" HeightRequest="64" />
-            <Label FontSize="22" FontAttributes="Bold" Text="My Shopping Lists" VerticalOptions="End" />
+            <Image Source="logo_digi_alt.png" SemanticProperties.Description="My Favourite Company" HeightRequest="64" />
+            <Label FontSize="22" FontAttributes="Bold" Text="My Favourote Company" VerticalOptions="End" />
             <Label FontSize="22" Text="v1.0" VerticalOptions="End" />
         </HorizontalStackLayout>
-        <Label Text="This app will help you to manage your shopping lists" />
+        <Label Text="Lucrăm în fiecare zi ca mâine să fim mai buni ca azi, iar acest lucru se vede. Se vede în serviciile de top, se vede în numărul celor care ne aleg, se vede în tehnologie și în cel mai nou titlu cu care ne mândrim: #1 la acoperire." />
     </VerticalStackLayout>
 </ContentPage>
