@@ -24,8 +24,7 @@ public partial class ListPage : ContentPage
 
     async void OnChooseButtonClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new ProductPage((ShopList)
-       this.BindingContext)
+        await Navigation.PushAsync(new ProductPage((ShopList)this.BindingContext)
         {
             BindingContext = new Product()
         });
@@ -37,6 +36,23 @@ public partial class ListPage : ContentPage
         var shopl = (ShopList)BindingContext;
 
         listView.ItemsSource = await App.Database.GetListProductsAsync(shopl.ID);
+    }
+
+    async void OnRemoveProductButtonClicked(object sender, EventArgs e)
+    {
+        Product p;
+        ShopList sl = (ShopList)this.BindingContext;
+        if (listView.SelectedItem != null)
+        {
+            p = listView.SelectedItem as Product;
+            var lp = new ListProduct()
+            {
+                ShopListID = sl.ID,
+                ProductID = p.ID
+            };
+            await App.Database.deleteListProductAsync(lp);
+            listView.ItemsSource = await App.Database.GetListProductsAsync(sl.ID);
+        }
     }
 
 }

@@ -70,6 +70,15 @@ namespace GeorzaDanielLab7.Data
                 return _database.InsertAsync(listp);
             }
         }
+
+        public async Task<int> deleteListProductAsync(ListProduct listp)
+        {
+            string query = $"DELETE FROM ListProduct WHERE ShopListID = ? AND ProductID = ?";
+
+            int rowsDeleted = await _database.ExecuteAsync(query, listp.ShopListID, listp.ProductID);
+            return rowsDeleted;
+        }
+
         public Task<List<Product>> GetListProductsAsync(int shoplistid)
         {
             return _database.QueryAsync<Product>(
